@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/ulla', 'UllaAdmin@index'); {
+ return view('welcome');
+}
