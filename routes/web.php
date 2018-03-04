@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('me', 'ApiController@me');
+
+Route::get('updates', 'ApiController@updates');
+
+Route::get('respond', 'ApiController@respond');
