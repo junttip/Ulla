@@ -16,3 +16,15 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('quips', 'QuipController@index');
+
+Route::post('quip', 'QuipController@store');
+
+Route::post('testipost', function(){
+    return 'Post is working';
+});
+
+Route::get('testiget', function(){
+    return 'Get is working';
+});
