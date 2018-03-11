@@ -30,6 +30,15 @@ Route::post('quip', 'QuipController@store');
 Route::post('testipost', function(){
     return 'Post is working';
 });
+
+Route::get('quips', 'QuipController@index');
+
+Route::post('quip', 'QuipController@store');
+
+Route::post('testipost', function(){
+    return 'Post is working';
+});
+
 Route::get('testiget', function(){
     return 'Get is working';
 });

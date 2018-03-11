@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Quip;
 use App\Http\resources\Quip as QuipResource;
 
@@ -38,6 +39,7 @@ class QuipController extends Controller
     public function store(Request $request)
     {
         $quip = $request->isMethod('put') ? Quip::findOrFail($request->id) : new Quip;
+
         $quip->Quip_id = $request->input('Quip_id');
         $quip->Quip_name = $request->input('Quip_name');
         if($quip->save()) {
