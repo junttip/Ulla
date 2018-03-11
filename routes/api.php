@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 
+use Illuminate\Http\Response;
+use App\Http\Controllers\UllaController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,6 +17,18 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::get('qreetings', 'GreetingController@index');
+
+Route::post('greeting', 'GreetingController@store');
+
+//list Quips
+
+Route::get('quips', 'QuipController@index');
+Route::post('quip', 'QuipController@store');
+Route::post('testipost', function(){
+    return 'Post is working';
 });
 
 Route::get('quips', 'QuipController@index');

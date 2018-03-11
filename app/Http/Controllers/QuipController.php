@@ -17,7 +17,6 @@ class QuipController extends Controller
     public function index()
     {
         $quips = Quip::paginate(20);
-
         return QuipResource::collection($quips);
     }
 
@@ -43,12 +42,8 @@ class QuipController extends Controller
 
         $quip->Quip_id = $request->input('Quip_id');
         $quip->Quip_name = $request->input('Quip_name');
-
-
         if($quip->save()) {
-
             return new QuipResource($quip);
-
         }
     }
 
