@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\City;
+use App\Http\resources\City as CityResource;
 
-use App\Greeting;
-
-use App\Http\resources\Greeting as GreetingResource;
-
-class GreetingController extends Controller
+class CityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,9 @@ class GreetingController extends Controller
      */
     public function index()
     {
-        $greetings = Greeting::paginate(20);
-        return GreetingResource::collection($greetings);
+        $citys = City::paginate(20);
+        return CityResource::collection($citys);
+
     }
 
     /**
@@ -39,11 +38,11 @@ class GreetingController extends Controller
      */
     public function store(Request $request)
     {
-        $greeting = $request->isMethod('put') ? Greeting::findOrFail($request->id) : new Greeting;
-        $greeting->Greeting_id = $request->input('Greeting_id');
-        $greeting->Greeting_name = $request->input('Greeting_name');
-        if($greeting->save()) {
-            return new GreetingResource($greeting);
+        $city = $request->isMethod('put') ? City::findOrFail($request->id) : new City;
+        $city->Postcode = $request->input('Postcode');
+        $city->Name = $request->input('Name');
+        if($city->save()) {
+            return new CityResource($city);
         }
     }
 
@@ -55,7 +54,8 @@ class GreetingController extends Controller
      */
     public function show($id)
     {
-        //
+        $citybypostcode = City::findOrFail($id);
+        return new CityResource($citybypostcode);
     }
 
     /**

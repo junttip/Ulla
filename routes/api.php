@@ -23,6 +23,11 @@ Route::get('qreetings', 'GreetingController@index');
 
 Route::post('greeting', 'GreetingController@store');
 
+Route::get('citys', 'CityController@index');
+
+Route::post('city', 'CityController@store');
+
+Route::get('city/{id}', 'CityController@show');
 //list Quips
 
 Route::get('quips', 'QuipController@index');
