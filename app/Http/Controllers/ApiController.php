@@ -73,7 +73,7 @@ class ApiController extends Controller
     }
      
     public function showWeather($telegram, $chatid){
-        $message = 'http://google.com';
+        $message = 'Helsingissä sataa lunta';
      
         $response = $telegram->sendMessage([
             'chat_id' => $chatid,
@@ -82,7 +82,7 @@ class ApiController extends Controller
     }
      
     public function showQuip($telegram, $chatid){
-        $message = 'info@jqueryajaxphp.com';
+        $message = 'Naapurissa hiippaili tuntematon henkilö';
      
         $response = $telegram->sendMessage([
             'chat_id' => $chatid,
