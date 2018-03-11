@@ -20,3 +20,8 @@ Route::get('me', 'ApiController@me');
 Route::get('updates', 'ApiController@updates');
 
 Route::get('respond', 'ApiController@respond');
+
+Route::get('/ulla', 'UllaAdmin@index'); {
+ return view('welcome');
+}
+
