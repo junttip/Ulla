@@ -24,6 +24,11 @@
 
             <citys></citys>
         </div>
+        <div id="links">
+        <a href="me">link to Ulla's information</a></br>
+        <a href="updates">link to Ulla's updates</a></br>
+        <a href="respond">link to Ulla's respond</a></br>
+        </div>
     </div>
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
