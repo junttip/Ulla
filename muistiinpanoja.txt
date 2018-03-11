@@ -1,0 +1,11 @@
+Ullan tiedot näkyy:
+url/me
+
+Ullan kanssa aloitetut keskustelut näkyy:
+url/updates
+
+Ullan saa lähettämään vastauksia lähettämällä http kutsun, esim selaimella:
+url/respond
+
+Eli mulla url on esim:
+localhost/ulla/public/
