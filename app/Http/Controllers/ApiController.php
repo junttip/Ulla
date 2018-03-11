@@ -46,14 +46,14 @@ class ApiController extends Controller
             case '/menu':
                 $this->showMenu($telegram, $chatid);
                 break;
-            case '/website':
-                $this->showWebsite($telegram, $chatid);
+            case '/saa':
+                $this->showWeather($telegram, $chatid);
                 break;
-            case '/contact';
-                $this->showContact($telegram, $chatid);
+            case '/juttu';
+                $this->showQuip($telegram, $chatid);
                 break;
             default:
-                $info = 'I do not understand what you just said. Please choose an option';
+                $info = 'En nyt ymmärtänyt. Haluaisitko jutella säästä vai kuulla yhden jutun jonka kuulin rappukäytävässä?';
                 $this->showMenu($telegram, $chatid, $info);
         }
     }
@@ -63,8 +63,8 @@ class ApiController extends Controller
         if($info !== null){
             $message .= $info.chr(10);
         }
-        $message .=  '/website'.chr(10);
-        $message .= '/contact'.chr(10);
+        $message .=  '/saa'.chr(10);
+        $message .= '/juttu'.chr(10);
      
         $response = $telegram->sendMessage([
             'chat_id' => $chatid, 
@@ -72,7 +72,7 @@ class ApiController extends Controller
         ]);
     }
      
-    public function showWebsite($telegram, $chatid){
+    public function showWeather($telegram, $chatid){
         $message = 'http://google.com';
      
         $response = $telegram->sendMessage([
@@ -81,7 +81,7 @@ class ApiController extends Controller
         ]);
     }
      
-    public function showContact($telegram, $chatid){
+    public function showQuip($telegram, $chatid){
         $message = 'info@jqueryajaxphp.com';
      
         $response = $telegram->sendMessage([
