@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests;
+
 use App\Greeting;
 
 use App\Http\resources\Greeting as GreetingResource;
@@ -19,6 +21,8 @@ class GreetingController extends Controller
     {
         $greetings = Greeting::paginate(20);
         return GreetingResource::collection($greetings);
+
+
     }
 
     /**
@@ -89,6 +93,10 @@ class GreetingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $greeting = Greeting::findOrFail($id);
+
+        if($greeting->delete()) {
+            return new GreetingResource($greeting);
+        }
     }
 }

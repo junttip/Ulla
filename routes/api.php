@@ -19,19 +19,28 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('qreetings', 'GreetingController@index');
+Route::get('greetings', 'GreetingController@index');
 
 Route::post('greeting', 'GreetingController@store');
+
+Route::put('greeting',  'GreetingController@store');
+
+Route::delete('greeting/{id}',  'GreetingController@destroy');
 
 Route::get('citys', 'CityController@index');
 
 Route::post('city', 'CityController@store');
 
-Route::get('city/{id}', 'CityController@show');
+
+
 //list Quips
 
 Route::get('quips', 'QuipController@index');
 Route::post('quip', 'QuipController@store');
+Route::put('quip', 'QuipController@store');
+Route::get('quip/{id}', 'QuipController@show');
+
+
 Route::post('testipost', function(){
     return 'Post is working';
 });
